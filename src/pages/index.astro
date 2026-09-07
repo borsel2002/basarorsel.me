@@ -1,0 +1,47 @@
+---
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Başar Örsel</title>
+    <meta name="description" content="Başar Örsel — systems athlete, ex-national sprint orienteer, WooCommerce operator." />
+  </head>
+  <body>
+    <main class="container">
+      <header style="padding: var(--space-6) 0 var(--space-4);">
+        <h1 style="font-size: 2.5rem; margin: 0;">Başar Örsel</h1>
+        <p class="muted" style="margin: var(--space-1) 0 0;">
+          Systems athlete · ex-national sprint orienteer · WooCommerce operator
+        </p>
+      </header>
+
+      <section style="padding: var(--space-2) 0;">
+        <h2>About</h2>
+        <p>
+          I build and operate WooCommerce stores for small businesses, and I train
+          as a sprint orienteer targeting a return to the national team.
+        </p>
+      </section>
+
+      <section style="padding: var(--space-2) 0;">
+        <h2>Links</h2>
+        <ul style="list-style: none; padding: 0; display: grid; gap: var(--space-2);">
+          <li><a href="https://basarorsel.com">Portfolio &amp; sports</a></li>
+          <li><a href="https://orselstudio.tech">Orsel Studio — business</a></li>
+          <li><a href="mailto:contact@orselstudio.tech">Email</a></li>
+        </ul>
+      </section>
+
+      <footer class="muted" style="padding: var(--space-5) 0; font-size: 0.9rem;">
+        © {new Date().getFullYear()} Başar Örsel
+      </footer>
+    </main>
+  </body>
+</html>
