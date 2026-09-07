@@ -34,6 +34,8 @@ html[data-theme="dark"]{
 html[data-section="home"], html[data-section="principles"], html[data-section="contact"]{--accent:var(--main-accent)}
 html[data-section="sports"]{--accent:var(--sports-accent)}
 html[data-section="academic"]{--accent:var(--math-accent)}
+html[data-section="code"]{--accent:var(--code-accent)}
+html[data-section="hobbies"]{--accent:var(--main-accent)}
 html[data-section="work"]{--accent:var(--work-accent)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -138,8 +140,11 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-family:ui-monospace,
       <a href="#principles">Principles</a>
       <a href="#sports">Sports</a>
       <a href="#academic">Academic</a>
+      <a href="#code">Code</a>
+      <a href="#hobbies">Hobbies</a>
       <a href="#work">Work</a>
       <a href="#contact">Contact</a>
+      <a href="https://basarorsel.com" style="color:var(--accent)">Data ↗</a>
       <button id="themeBtn" title="Theme: auto follows the sun — white is the day, black is the night">AUTO</button>
     </div>
   </div>
@@ -221,9 +226,40 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-family:ui-monospace,
   </div>
 </section>
 
+<section id="code">
+  <div class="wrap">
+    <span class="label">04 — Code</span>
+    <h2>Code is how I make systems hold.</h2>
+    <div class="cols">
+      <div>
+        <p>Back-end development and applied data work since before university — full-stack PHP/SQL, an RFID-based entry security system, market analytics, SEO and automation.</p>
+        <p>Systems side: Docker, software automation, data and system design, LLM prompt engineering.</p>
+        <p class="sig">python · sql · php · rust · go · bash · html/css/js</p>
+      </div>
+      <div>
+        <p><b>Exhibit A is this page.</b> A single dependency-free HTML file — no frameworks, no trackers, no build step. The training data lives on the portfolio site, parsed from raw <span class="mono">.fit</span> watch telemetry: deduplicated, aggregated, validated so chart sums reconcile with totals, then injected. If the numbers don't reconcile, the build refuses to ship.</p>
+        <p class="sig">fit telemetry → parser → aggregation → validation → site</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hobbies">
+  <div class="wrap">
+    <span class="label">05 — Hobbies</span>
+    <h2>The rest of the bandwidth.</h2>
+    <div class="axioms">
+      <div class="ax"><div class="n">MACHINES</div><h3>Motorsport &amp; wrenching</h3><p>Formula 1, endurance racing, the Isle of Man TT — plus the hands-on side: fixing and modding cars. Aviation for the same reason: systems at their limits.</p></div>
+      <div class="ax"><div class="n">TERRAIN</div><h3>Wild disciplines</h3><p>Orienteering, mountaineering and open-water swimming — sports where the environment is the opponent and navigation is part of the fitness.</p></div>
+      <div class="ax"><div class="n">MIND</div><h3>Strategy &amp; understanding</h3><p>Chess and strategy games. Reading across psychology, human relations, politics and history — how people and systems actually behave.</p></div>
+      <div class="ax"><div class="n">TABLE</div><h3>Cooking &amp; eating</h3><p>Fuel is input, but the table is culture. Cooking properly, eating well — an athlete's appetite with a cook's standards.</p></div>
+    </div>
+  </div>
+</section>
+
 <section id="work">
   <div class="wrap">
-    <span class="label">04 — Work</span>
+    <span class="label">06 — Work</span>
     <h2>I build and operate WooCommerce stores.</h2>
     <div class="cols">
       <div>
@@ -242,7 +278,7 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-family:ui-monospace,
 
 <section id="contact">
   <div class="wrap">
-    <span class="label">05 — Contact</span>
+    <span class="label">07 — Contact</span>
     <h2>Signal, not noise.</h2>
     <p class="lead">For collaboration, sponsorship, or a hard problem worth solving:</p>
     <div class="goal" style="margin-top:30px"><span class="g mono" style="font-size:clamp(16px,2.6vw,22px)"><a href="mailto:contact@basarorsel.com" style="text-decoration:none">contact@basarorsel.com</a></span><span class="st">email — fastest route</span></div>
@@ -273,7 +309,7 @@ btn.onclick = () => { mode = modes[(modes.indexOf(mode)+1)%3]; localStorage.setI
 apply(); setInterval(apply, 60000);
 
 /* ---------- page router: intro first, everything else via the menu ---------- */
-const SECTIONS = ['principles','sports','academic','work','contact'];
+const SECTIONS = ['principles','sports','academic','code','hobbies','work','contact'];
 function route(){
   const h = location.hash.replace('#','');
   const valid = SECTIONS.includes(h);
