@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+  <!-- B -->
+  <path d="M70 40 V160"/>
+  <path d="M70 40 C150 40 150 100 70 100"/>
+  <path d="M70 100 C150 100 150 160 70 160"/>
+  <!-- Ö umlaut -->
+  <circle cx="88" cy="22" r="9" fill="currentColor" stroke="none"/>
+  <circle cx="132" cy="22" r="9" fill="currentColor" stroke="none"/>
+</svg>

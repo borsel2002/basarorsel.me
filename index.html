@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Başar Örsel</title>
 <meta name="description" content="Başar Örsel — a personal identity page: mathematics, sprint orienteering, systems, projects, and current direction.">
+<link rel="icon" type="image/svg+xml" href="/logo.svg">
 <style>
 /* ---------- base: white is the day, black is the night ---------- */
 :root{
@@ -33,7 +34,11 @@ a:hover{color:var(--accent)}
 /* ---------- nav ---------- */
 nav{position:fixed;top:0;left:0;right:0;background:color-mix(in srgb,var(--bg),transparent 12%);backdrop-filter:blur(18px);z-index:50;border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:20px}
-.brand{font-size:12px;letter-spacing:.16em;border:0;color:var(--fg)}
+.brand{font-size:12px;letter-spacing:.16em;border:0;color:var(--fg);display:flex;align-items:center;gap:10px}
+.brand .logo{width:26px;height:26px;flex:none}
+.brand span{white-space:nowrap}
+.signature{width:min(560px,100%);height:auto;display:block;margin-bottom:8px}
+:root[data-theme="dark"] .signature{filter:invert(1)}
 .links{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:flex-end}
 .links a,.links button{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);border:0;background:transparent;cursor:pointer;font:inherit;font-family:ui-monospace,Menlo,monospace}
 .links a.on,.links a:hover,.links button:hover{color:var(--accent)}
@@ -105,7 +110,10 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-size:11.5px;color:va
 
 <nav>
   <div class="wrap">
-    <a class="brand" href="#">BAŞAR&nbsp;ÖRSEL</a>
+    <a class="brand" href="#">
+      <svg class="logo" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M70 40 V160"/><path d="M70 40 C150 40 150 100 70 100"/><path d="M70 100 C150 100 150 160 70 160"/><circle cx="88" cy="22" r="9" fill="currentColor" stroke="none"/><circle cx="132" cy="22" r="9" fill="currentColor" stroke="none"/></svg>
+      <span>BAŞAR&nbsp;ÖRSEL</span>
+    </a>
     <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
@@ -124,7 +132,7 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-size:11.5px;color:va
 
 <header class="hero" id="home">
   <div class="wrap">
-    <h1>Başar Örsel</h1>
+    <img class="signature" src="/signature.svg" alt="Başar Örsel" />
     <div class="role">mathematics student · sprint orienteer · builder of small systems</div>
     <p class="lead" style="margin-top:28px">
       I am trying to become a harder person to fool: by proofs, by training logs, by maps, by code, and by keeping my systems honest enough that bad numbers cannot hide.
