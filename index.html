@@ -35,6 +35,13 @@ a:hover{color:var(--accent)}
 nav{position:fixed;top:0;left:0;right:0;background:color-mix(in srgb,var(--bg),transparent 12%);backdrop-filter:blur(18px);z-index:50;border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:20px}
 .brand{font-size:12px;letter-spacing:.16em;border:0;color:var(--fg);display:flex;align-items:center;gap:10px}
+.brand-logo{width:34px;height:34px;display:block;object-fit:contain;border-radius:50%}
+.brand-logo-dark{display:none}
+:root[data-theme="dark"] .brand-logo-light{display:none}
+:root[data-theme="dark"] .brand-logo-dark{display:block}
+.brand span{white-space:nowrap}
+.signature-name{display:block;width:min(760px,100%);height:auto;margin:0 0 18px;color:var(--fg);filter:none}
+:root[data-theme="dark"] .signature-name{filter:invert(1)}
 .links{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:flex-end}
 .links a,.links button{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);border:0;background:transparent;cursor:pointer;font:inherit;font-family:ui-monospace,Menlo,monospace}
 .links a.on,.links a:hover,.links button:hover{color:var(--accent)}
@@ -106,7 +113,11 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-size:11.5px;color:va
 
 <nav>
   <div class="wrap">
-    <a class="brand" href="#">BAŞAR&nbsp;ÖRSEL</a>
+    <a class="brand" href="#" aria-label="Başar Örsel home">
+      <img class="brand-logo brand-logo-light" src="/brand-logo-light.svg" alt="" aria-hidden="true">
+      <img class="brand-logo brand-logo-dark" src="/brand-logo-dark.svg" alt="" aria-hidden="true">
+      <span>BAŞAR&nbsp;ÖRSEL</span>
+    </a>
     <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
@@ -125,7 +136,7 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-size:11.5px;color:va
 
 <header class="hero" id="home">
   <div class="wrap">
-    <h1>Başar Örsel</h1>
+    <img class="signature-name" src="/signature.svg" alt="Başar Örsel">
     <div class="role">mathematics student · sprint orienteer · builder of small systems</div>
     <p class="lead" style="margin-top:28px">
       I am trying to become a harder person to fool: by proofs, by training logs, by maps, by code, and by keeping my systems honest enough that bad numbers cannot hide.
