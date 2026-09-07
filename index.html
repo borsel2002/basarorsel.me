@@ -19,11 +19,9 @@
   color-scheme:dark;
 }
 html[data-section="home"], html[data-section="principles"], html[data-section="contact"], html[data-section="now"]{--accent:var(--main-accent)}
-html[data-section="sports"]{--accent:var(--sports-accent)}
 html[data-section="academic"]{--accent:var(--math-accent)}
-html[data-section="code"]{--accent:var(--code-accent)}
 html[data-section="hobbies"]{--accent:var(--main-accent)}
-html[data-section="work"]{--accent:var(--work-accent)}
+html[data-section="directory"]{--accent:var(--work-accent)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--fg);font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;transition:background .45s,color .45s}
@@ -77,11 +75,9 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-size:11.5px;color:va
     <div class="links">
       <a href="#now">Now</a>
       <a href="#principles">Principle</a>
-      <a href="#sports">Sports</a>
       <a href="#academic">Academic</a>
-      <a href="#code">Code</a>
       <a href="#hobbies">Hobbies</a>
-      <a href="#work">Work</a>
+      <a href="#directory">Directory</a>
       <a href="#contact">Contact</a>
       <a href="https://basarorsel.com" style="color:var(--accent)">Portfolio ↗</a>
       <button id="themeBtn" title="Theme: auto follows the sun — white is the day, black is the night">AUTO</button>
@@ -136,18 +132,9 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-size:11.5px;color:va
   </div>
 </section>
 
-<section id="sports">
-  <div class="wrap">
-    <span class="label">02 — Sports</span>
-    <h2>Sports live on the portfolio site.</h2>
-    <p class="lead">Orienteering, mountaineering, running, training logs and maps — the numbers and the field evidence are on the portfolio, not here.</p>
-    <div class="goal" style="margin-top:44px"><span class="g"><a href="https://basarorsel.com">basarorsel.com →</a></span><span class="st">sports · portfolio · data</span></div>
-  </div>
-</section>
-
 <section id="academic">
   <div class="wrap">
-    <span class="label">03 — Academic</span>
+    <span class="label">02 — Academic</span>
     <h2>Math is where I learn how not to hand-wave.</h2>
     <div class="cols">
       <div>
@@ -162,18 +149,9 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-size:11.5px;color:va
   </div>
 </section>
 
-<section id="code">
-  <div class="wrap">
-    <span class="label">04 — Code</span>
-    <h2>Projects live on the portfolio site.</h2>
-    <p class="lead">Finished repos, source, screenshots and the tools I build — they belong on the portfolio, not here.</p>
-    <div class="goal" style="margin-top:44px"><span class="g"><a href="https://basarorsel.com">basarorsel.com →</a></span><span class="st">projects · repos · tools</span></div>
-  </div>
-</section>
-
 <section id="hobbies">
   <div class="wrap">
-    <span class="label">05 — Hobbies</span>
+    <span class="label">03 — Hobbies</span>
     <h2>What I keep returning to.</h2>
     <div class="cards">
       <div class="card"><div class="n">Machines</div><h3>Racing, cars, aviation</h3><p>Formula 1, endurance racing, the Isle of Man TT, fixing and modding cars, and aircraft as systems pushed to consequence.</p></div>
@@ -184,12 +162,31 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-size:11.5px;color:va
   </div>
 </section>
 
-<section id="work">
+<section id="directory">
   <div class="wrap">
-    <span class="label">06 — Work</span>
-    <h2>Work lives on the business site.</h2>
-    <p class="lead">WooCommerce operations, AI/search optimization, full websites — the services and the sales page are on Orsel Studio, not here.</p>
-    <div class="goal" style="margin-top:44px"><span class="g"><a href="https://orselstudio.tech">orselstudio.tech →</a></span><span class="st">work · services · business</span></div>
+    <span class="label">04 — Directory</span>
+    <h2>Three places, one person.</h2>
+    <p class="lead">This page is the person. The work and the proof have their own homes — go where the thing you want actually lives.</p>
+    <div class="cards" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+      <a class="card" href="https://basarorsel.com" style="display:block;text-decoration:none;border:1px solid var(--line)">
+        <div class="n">Portfolio</div>
+        <h3>basarorsel.com</h3>
+        <p>Sports, training logs, maps, projects, finished repos. The evidence — numbers, routes, source.</p>
+        <div class="sig">sports · projects · data →</div>
+      </a>
+      <a class="card" href="https://orselstudio.tech" style="display:block;text-decoration:none;border:1px solid var(--line)">
+        <div class="n">Work</div>
+        <h3>orselstudio.tech</h3>
+        <p>WooCommerce operations, AI/search optimization, full websites. The services and the sales page.</p>
+        <div class="sig">work · services · business →</div>
+      </a>
+      <a class="card" href="#contact" style="display:block;text-decoration:none;border:1px solid var(--line)">
+        <div class="n">Contact</div>
+        <h3>You are here</h3>
+        <p>Personal contact lives on this page. Write if there is a real reason.</p>
+        <div class="sig">personal · direct →</div>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -226,7 +223,7 @@ btn.onclick = () => { mode = modes[(modes.indexOf(mode)+1)%3]; localStorage.setI
 apply(); setInterval(apply, 60000);
 
 /* ---------- page router: intro first, everything else via the menu ---------- */
-const SECTIONS = ['now','principles','sports','academic','code','hobbies','work','contact'];
+const SECTIONS = ['now','principles','academic','hobbies','directory','contact'];
 function route(){
   const h = location.hash.replace('#','');
   const valid = SECTIONS.includes(h);
