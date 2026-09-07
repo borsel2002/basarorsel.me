@@ -4,34 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Başar Örsel</title>
-<meta name="description" content="Başar Örsel — systems athlete, ex-national sprint orienteer, WooCommerce operator. Mathematics at İzmir Institute of Technology.">
-<meta name="author" content="Başar Örsel">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://basarorsel.me/">
-<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23111'/%3E%3Ctext x='50' y='72' font-size='64' fill='%23fff' text-anchor='middle' font-family='monospace'%3EB%3C/text%3E%3C/svg%3E">
-<noscript><style>section{display:block !important}header.hero{display:block !important}</style></noscript>
+<meta name="description" content="Başar Örsel — a personal identity page: mathematics, sprint orienteering, systems, projects, and current direction.">
 <style>
-/* ============================================================
-   THEME SYSTEM — white is the day, black is the night.
-   Auto-selects by local hour (07–19 = light), manual override
-   persists in localStorage. Each section gets its own restrained
-   accent while preserving the hand-coded system.
-   ============================================================ */
+/* ---------- base: white is the day, black is the night ---------- */
 :root{
-  --bg:#ffffff; --fg:#111111; --mut:#6b6b6b; --line:#e4e4e4;
-  --accent:#111111; --accent-soft:#f3f3f3; --card:#fafafa; --grid:#efefef;
-  --main-accent:#0ea5e9; --sports-accent:#0f766e; --math-accent:#7c3aed;
-  --code-accent:#059669; --work-accent:#525252;
+  --bg:#fff;--fg:#0b0b0b;--mut:#656565;--line:#e8e8e8;--card:#fafafa;
+  --main-accent:#6b6b6b;--sports-accent:#008c7a;--math-accent:#6048b5;--code-accent:#2f6f5e;--work-accent:#334155;
+  --accent:var(--main-accent);
+  color-scheme:light;
 }
-html[data-theme="dark"]{
-  --bg:#0a0a0a; --fg:#f2f2f2; --mut:#8a8a8a; --line:#232323;
-  --accent:#f2f2f2; --accent-soft:#121212; --card:#111111; --grid:#1a1a1a;
-  --main-accent:#7dd3fc; --sports-accent:#2dd4bf; --math-accent:#a78bfa;
-  --code-accent:#34d399; --work-accent:#d4d4d4;
+:root[data-theme="dark"]{
+  --bg:#050505;--fg:#f5f5f5;--mut:#a0a0a0;--line:#202020;--card:#0d0d0d;
+  --main-accent:#c7c7c7;--sports-accent:#17c8af;--math-accent:#a894ff;--code-accent:#7ed7b6;--work-accent:#9db4d2;
+  color-scheme:dark;
 }
-html[data-section="home"], html[data-section="principles"], html[data-section="contact"]{--accent:var(--main-accent)}
+html[data-section="home"], html[data-section="principles"], html[data-section="contact"], html[data-section="now"]{--accent:var(--main-accent)}
 html[data-section="sports"]{--accent:var(--sports-accent)}
 html[data-section="academic"]{--accent:var(--math-accent)}
 html[data-section="code"]{--accent:var(--code-accent)}
@@ -39,96 +26,47 @@ html[data-section="hobbies"]{--accent:var(--main-accent)}
 html[data-section="work"]{--accent:var(--work-accent)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-section{display:none}
-section.active{display:block;border-top:none;min-height:70vh}
-nav .links a.on{color:var(--fg);border-bottom:1px solid var(--accent);padding-bottom:2px}
-nav .brand{text-decoration:none;color:var(--fg)}
-body{
-  background:var(--bg); color:var(--fg);
-  font-family:"Helvetica Neue",Helvetica,Arial,system-ui,sans-serif;
-  -webkit-font-smoothing:antialiased;
-  transition:background .35s,color .35s;
-  line-height:1.55;
-}
-.mono{font-family:ui-monospace,"SF Mono","IBM Plex Mono",Menlo,Consolas,monospace}
-.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
-section{padding:88px 0;border-top:1px solid var(--line)}
-.label{
-  font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.22em;
-  text-transform:uppercase;color:var(--mut);margin-bottom:28px;display:block;
-}
-h2{font-size:clamp(26px,4vw,40px);font-weight:600;letter-spacing:-.02em;margin-bottom:24px}
-p.lead{font-size:17px;max-width:640px;color:var(--fg)}
-a{color:inherit}
+body{background:var(--bg);color:var(--fg);font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;transition:background .45s,color .45s}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+a{color:inherit;text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent),transparent 45%)}
+a:hover{color:var(--accent)}
+.mono,.label,.sig,.role,.statstrip,.goal,.qed,footer{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
 
-/* ---------- top bar ---------- */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:50;
-  background:color-mix(in srgb,var(--bg) 88%,transparent);
-  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
-}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
-nav .brand{font-family:ui-monospace,Menlo,monospace;font-size:13px;letter-spacing:.12em}
-nav .links{display:flex;gap:22px;align-items:center}
-nav .links a{font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--mut)}
-nav .links a:hover{color:var(--fg)}
-#themeBtn{
-  border:1px solid var(--line);background:none;color:var(--fg);cursor:pointer;
-  font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.1em;
-  padding:6px 12px;border-radius:2px;
-}
-#themeBtn:hover{border-color:var(--accent);color:var(--accent)}
+/* ---------- nav ---------- */
+nav{position:fixed;top:0;left:0;right:0;background:color-mix(in srgb,var(--bg),transparent 12%);backdrop-filter:blur(18px);z-index:50;border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:20px}
+.brand{font-size:12px;letter-spacing:.16em;border:0;color:var(--fg)}
+.links{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:flex-end}
+.links a,.links button{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);border:0;background:transparent;cursor:pointer;font:inherit;font-family:ui-monospace,Menlo,monospace}
+.links a.on,.links a:hover,.links button:hover{color:var(--accent)}
 
-/* ---------- hero ---------- */
-header.hero{padding:170px 0 96px;border:none}
-.hero h1{font-size:clamp(44px,8vw,92px);font-weight:700;letter-spacing:-.04em;line-height:1.02}
-.hero .role{
-  margin-top:22px;font-family:ui-monospace,Menlo,monospace;font-size:13px;
-  letter-spacing:.18em;text-transform:uppercase;color:var(--mut);
-}
-.hero .role b{color:var(--accent);font-weight:500}
-.statstrip{
-  margin-top:64px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  border-top:1px solid var(--line);
-}
-.statstrip .s{padding:20px 16px 0 0;border-right:1px solid var(--line);padding-right:20px}
-.statstrip .s:last-child{border-right:none}
-.statstrip .v{font-family:ui-monospace,Menlo,monospace;font-size:clamp(22px,3vw,32px);font-weight:600;letter-spacing:-.02em}
-.statstrip .k{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-top:4px}
+/* ---------- sections ---------- */
+header.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px}
+h1{font-size:clamp(58px,10vw,132px);line-height:.9;letter-spacing:-.075em;font-weight:800;max-width:900px}
+h2{font-size:clamp(34px,5vw,72px);line-height:.95;letter-spacing:-.055em;font-weight:760;max-width:900px;margin-top:18px}
+h3{font-size:18px;letter-spacing:-.015em;margin-bottom:8px}
+p{font-size:clamp(16px,1.7vw,20px);color:var(--mut);max-width:720px}
+.lead{font-size:clamp(20px,2.3vw,30px);line-height:1.25;letter-spacing:-.025em;color:var(--fg);max-width:820px}
+.role{margin-top:22px;color:var(--accent);font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.label{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.sig{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-top:18px}
+section{display:none;min-height:100vh;padding:130px 0 90px;border-top:1px solid var(--line)}
+section.active{display:block}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:42px;margin-top:42px}
+.cols p+p{margin-top:16px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:36px}
+.card{border:1px solid var(--line);background:var(--card);padding:22px;min-height:160px;transition:border-color .25s,transform .25s}
+.card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.card .n{font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.16em;color:var(--accent);margin-bottom:22px;text-transform:uppercase}
+.statstrip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);margin-top:54px;border:1px solid var(--line)}
+.s{background:var(--bg);padding:22px 18px}.s .v{font-size:24px;color:var(--fg);letter-spacing:-.03em}.s .k{margin-top:6px;font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.1em}
+.goal{display:flex;justify-content:space-between;gap:24px;padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline}.g{font-size:clamp(20px,2.5vw,34px);letter-spacing:-.04em}.st{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.1em;text-align:right}.goalnote{margin-top:22px;font-size:15px}.qed{margin-top:34px;color:var(--accent);font-size:13px;letter-spacing:.08em}
+.nowgrid{display:grid;grid-template-columns:170px 1fr;gap:0;margin-top:38px;border-top:1px solid var(--line)}
+.nowgrid div{border-bottom:1px solid var(--line);padding:16px 0}.nowgrid .k{font-family:ui-monospace,Menlo,monospace;color:var(--accent);font-size:12px;letter-spacing:.12em;text-transform:uppercase}.nowgrid .v{color:var(--fg);font-size:clamp(17px,1.7vw,22px)}
 
-/* ---------- axioms / manifesto ---------- */
-.axioms{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:8px}
-.ax{background:var(--bg);padding:28px 26px}
-.ax .n{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--accent);letter-spacing:.18em}
-.ax h3{font-size:16px;margin:10px 0 8px;font-weight:600}
-.ax p{font-size:14px;color:var(--mut)}
-.qed{margin-top:26px;font-family:ui-monospace,Menlo,monospace;font-size:13px;color:var(--mut)}
-
-/* ---------- two-col identity ---------- */
-.cols{display:grid;grid-template-columns:1fr 1fr;gap:56px}
-@media(max-width:760px){.cols{grid-template-columns:1fr}}
-.cols h3{font-size:18px;margin-bottom:12px;font-weight:600}
-.cols p{font-size:15px;color:var(--mut);margin-bottom:14px}
-.cols .sig{font-family:ui-monospace,Menlo,monospace;font-size:13px;color:var(--accent)}
-
-/* ---------- goals ---------- */
-.goal{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:26px 0;border-bottom:1px solid var(--line)}
-.goal:first-of-type{border-top:1px solid var(--line)}
-.goal .g{font-size:clamp(20px,3vw,28px);font-weight:600;letter-spacing:-.02em}
-.goal .st{font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);text-align:right}
-.goalnote{margin-top:26px;font-size:14px;color:var(--mut);max-width:560px}
-
-/* ---------- small screens ---------- */
-@media(max-width:720px){
-  nav .wrap{gap:10px}
-  nav .links{flex:1;justify-content:flex-start;overflow-x:auto;gap:14px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-  nav .links::-webkit-scrollbar{display:none}
-  nav .links a{white-space:nowrap;font-size:11px}
-  header.hero{padding:120px 0 64px}
-}
-
-/* ---------- footer ---------- */
-footer{border-top:1px solid var(--line);padding:44px 0;font-family:ui-monospace,Menlo,monospace;font-size:11.5px;color:var(--mut);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:820px){.cols,.cards,.statstrip{grid-template-columns:1fr}.nowgrid{grid-template-columns:1fr}.nowgrid .k{padding-bottom:0;border-bottom:0}nav .wrap{height:auto;min-height:64px;padding-top:14px;padding-bottom:14px}.links{justify-content:flex-start}}
+@media(max-width:720px){nav .wrap{gap:10px}.links{flex:1;overflow-x:auto;gap:14px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.links::-webkit-scrollbar{display:none}.links a{white-space:nowrap;font-size:11px}header.hero{padding:120px 0 64px}}
+footer{border-top:1px solid var(--line);padding:44px 0;font-size:11.5px;color:var(--mut);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 </style>
 </head>
 <body>
@@ -137,14 +75,15 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-family:ui-monospace,
   <div class="wrap">
     <a class="brand" href="#">BAŞAR&nbsp;ÖRSEL</a>
     <div class="links">
-      <a href="#principles">Principles</a>
+      <a href="#now">Now</a>
+      <a href="#principles">Principle</a>
       <a href="#sports">Sports</a>
       <a href="#academic">Academic</a>
       <a href="#code">Code</a>
       <a href="#hobbies">Hobbies</a>
       <a href="#work">Work</a>
       <a href="#contact">Contact</a>
-      <a href="https://basarorsel.com" style="color:var(--accent)">Data ↗</a>
+      <a href="https://basarorsel.com" style="color:var(--accent)">Portfolio ↗</a>
       <button id="themeBtn" title="Theme: auto follows the sun — white is the day, black is the night">AUTO</button>
     </div>
   </div>
@@ -153,74 +92,82 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-family:ui-monospace,
 <header class="hero" id="home">
   <div class="wrap">
     <h1>Başar Örsel</h1>
-    <div class="role"><b>Systems athlete</b> · ex-national sprint orienteer · WooCommerce operator</div>
+    <div class="role">mathematics student · sprint orienteer · builder of small systems</div>
     <p class="lead" style="margin-top:28px">
-      I think in structures, proofs and feedback loops. I train my body the same way I study mathematics:
-      measure, stress-test, correct, repeat. The comeback is a system, not a mood.
+      I am trying to become a harder person to fool: by proofs, by training logs, by maps, by code, and by keeping my systems honest enough that bad numbers cannot hide.
     </p>
     <div class="statstrip">
-      <div class="s"><div class="v">2027</div><div class="k">E21E national team target</div></div>
-      <div class="s"><div class="v">sub-10:00</div><div class="k">3000 m gate</div></div>
-      <div class="s"><div class="v">EOC</div><div class="k">sprint championships</div></div>
-      <div class="s"><div class="v">İYTE</div><div class="k">mathematics</div></div>
+      <div class="s"><div class="v">İYTE</div><div class="k">B.Sc. mathematics</div></div>
+      <div class="s"><div class="v">E21E</div><div class="k">orienteering target</div></div>
+      <div class="s"><div class="v">2027</div><div class="k">comeback horizon</div></div>
+      <div class="s"><div class="v">İzmir</div><div class="k">home base</div></div>
     </div>
   </div>
 </header>
 
+<section id="now">
+  <div class="wrap">
+    <span class="label">00 — Now</span>
+    <h2>Current state, not a biography.</h2>
+    <div class="nowgrid">
+      <div class="k">Studying</div><div class="v">B.Sc. Mathematics at İzmir Institute of Technology; interests: topology, knot theory, machine learning, LLMs.</div>
+      <div class="k">Training</div><div class="v">Rebuilding from a detrained state toward a 2027 E21E sprint-orienteering comeback. The gate is 3000 m under 10:00.</div>
+      <div class="k">Building</div><div class="v">A three-domain system: this identity page, a portfolio/data site, and Orsel Studio for WooCommerce, AI/search optimization, and full websites.</div>
+      <div class="k">Tracking</div><div class="v">Training and work are instrumented where possible. I prefer numbers that can embarrass me over claims that flatter me.</div>
+    </div>
+    <div class="qed">Updated Sep 2026 · if this line gets stale, the site is lying.</div>
+  </div>
+</section>
+
 <section id="principles">
   <div class="wrap">
-    <span class="label">01 — Operating principles</span>
+    <span class="label">01 — Principle</span>
     <h2>Discipline is structural, not emotional.</h2>
-    <div class="axioms">
-      <div class="ax"><div class="n">AXIOM 1</div><h3>Truth enables correction</h3><p>If it cannot be measured, stress-tested, or logically examined, it does not dictate direction. Truth → correction → adaptation → performance.</p></div>
-      <div class="ax"><div class="n">AXIOM 2</div><h3>Actions before feelings</h3><p>I do not wait to feel ready. Execute the plan, then evaluate the output. Feelings are signals — not commanders.</p></div>
-      <div class="ax"><div class="n">AXIOM 3</div><h3>Trends over impulses</h3><p>Longitudinal data over single bad days. Metrics over mood. If something fails, I don't collapse — I debug.</p></div>
-      <div class="ax"><div class="n">AXIOM 4</div><h3>Consistency compounds</h3><p>Wake up. Train. Log. Eat. Recover. Study. Repeat. No drama, no mythology. Compounding is law.</p></div>
-      <div class="ax"><div class="n">AXIOM 5</div><h3>The body is a system</h3><p>HRV is feedback. Lactate threshold is a variable. Sleep is the repair protocol. Undereating is self-sabotage.</p></div>
-      <div class="ax"><div class="n">AXIOM 6</div><h3>Precision over impression</h3><p>I am not here to be impressive. I am here to be precise — and, through precision, formidable.</p></div>
+    <div class="cols">
+      <div>
+        <p>I do not trust motivation as a control system. Training decisions should survive contact with HRV, resting heart rate, sleep, training stress and the map in my hand.</p>
+        <p>If the data says no, I do not run harder to prove a point. If the proof breaks, I do not keep the theorem for aesthetics.</p>
+      </div>
+      <div>
+        <p>This is the spine of the site: not a manifesto, just a constraint. Prefer correction over self-image. Prefer measurements over mood. Prefer systems that make lying expensive.</p>
+        <p class="sig">truth → correction → adaptation</p>
+      </div>
     </div>
-    <div class="qed">∎ &nbsp;Discipline and truth is the way. I walk it daily.</div>
   </div>
 </section>
 
 <section id="sports">
   <div class="wrap">
     <span class="label">02 — Sports</span>
-    <h2>Sprint orienteer. Comeback in progress.</h2>
+    <h2>Orienteering is the sport that explains me best.</h2>
     <div class="cols">
       <div>
-        <p>Ex-national sprint orienteer, now training the return to the senior-elite men's team — E21E, 2027. The gate is a 3000&nbsp;m baraj under 10:00, and the target is the European Orienteering Championships sprint.</p>
-        <p>I train sprint map-reading at redline by design: navigation under load is the discipline, not a side effect of fitness.</p>
+        <p>I am an ex-national sprint orienteer. The current project is simple to state and hard to earn: return to senior elite, E21E, in 2027.</p>
+        <p>Sprint orienteering rewards exactly the combination I care about: running at the edge, reading under stress, deciding quickly, and paying immediately for sloppy thinking.</p>
         <p class="sig">licensed → orienteering '13 · mountaineering '12</p>
       </div>
       <div>
-        <p>Detrained is a state, not an identity. The system is being rebuilt from objective readiness — HRV, resting heart rate, training stress balance, sleep — not from how I feel about it.</p>
-        <p>Anomalous responder: the plan is data-driven because the body doesn't answer to motivation.</p>
-        <p class="sig">readiness → HRV · RHR · TSB · sleep</p>
+        <p>I am currently detrained. That is not a confession or an excuse; it is the starting coordinate. The training log and maps belong on the portfolio site, where the numbers can speak without turning this page into a dashboard.</p>
+        <p class="sig"><a href="https://basarorsel.com">portfolio/data → basarorsel.com</a></p>
       </div>
     </div>
-    <h3 style="margin-top:56px;font-size:18px">The gate</h3>
-    <div class="goal" style="margin-top:14px"><span class="g">3000 m under 10:00</span><span class="st">baraj · Jun 2027</span></div>
-    <div class="goal"><span class="g">E21E senior-elite men's team</span><span class="st">national team · 2027</span></div>
-    <div class="goal"><span class="g">EOC sprint</span><span class="st">championships · 2027</span></div>
-    <p class="goalnote">No countdown clocks. I train for the version of me who will stand at the start line and read the map clean at redline — not because I am motivated, but because I do the work.</p>
+    <div class="goal" style="margin-top:44px"><span class="g">3000 m under 10:00</span><span class="st">baraj · Jun 2027</span></div>
+    <div class="goal"><span class="g">E21E senior-elite men's team</span><span class="st">national team target</span></div>
   </div>
 </section>
 
 <section id="academic">
   <div class="wrap">
     <span class="label">03 — Academic</span>
-    <h2>Structures, proofs, and the machines that learn them.</h2>
+    <h2>Math is where I learn how not to hand-wave.</h2>
     <div class="cols">
       <div>
-        <p>B.Sc. Mathematics, İzmir Institute of Technology. Proof-writing and formal reasoning are the core training; everything else is application.</p>
-        <p>Main interests: <b>topology</b> and <b>knot theory</b> — the mathematics of what survives deformation — and on the applied side, <b>machine learning</b> and <b>large language models</b>.</p>
-        <p class="sig">topology · knot theory · machine learning · LLMs</p>
+        <p>B.Sc. Mathematics at İYTE. The attraction is not abstraction for its own sake; it is the discipline of statements that either hold or do not.</p>
+        <p>The recurring question: what stays invariant when the surface changes? That points me toward topology and knot theory.</p>
       </div>
       <div>
-        <p>I treat problems the way I treat training blocks: decompose, attack the hardest sub-problem first, verify every step, never trust a result I haven't tested.</p>
-        <p>Earlier work in physics: ICYS 2018 (Serbia) — 3rd place, Physics Projects; 1st place, Poster Competition. Expo Asia Science Fair 2018 (South Korea) — award candidate.</p>
-        <p class="sig">languages → turkish (native) · english (fluent) · french (intermediate)</p>
+        <p>The applied side is machine learning and large language models: systems that look like language, break under pressure, and need careful evaluation before anyone should trust them.</p>
+        <p class="sig">topology · knot theory · ML · LLM evaluation</p>
       </div>
     </div>
   </div>
@@ -229,16 +176,15 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-family:ui-monospace,
 <section id="code">
   <div class="wrap">
     <span class="label">04 — Code</span>
-    <h2>Code is how I make systems hold.</h2>
+    <h2>I use code to remove excuses from systems.</h2>
     <div class="cols">
       <div>
-        <p>Back-end development and applied data work since before university — full-stack PHP/SQL, an RFID-based entry security system, market analytics, SEO and automation.</p>
-        <p>Systems side: Docker, software automation, data and system design, LLM prompt engineering.</p>
+        <p>I build small tools, websites, automations, data pipelines and operator systems. The languages change; the standard does not: the result has to work, survive inspection, and be easy to repair.</p>
         <p class="sig">python · sql · php · rust · go · bash · html/css/js</p>
       </div>
       <div>
-        <p><b>Exhibit A is this page.</b> A single dependency-free HTML file — no frameworks, no trackers, no build step. The training data lives on the portfolio site, parsed from raw <span class="mono">.fit</span> watch telemetry: deduplicated, aggregated, validated so chart sums reconcile with totals, then injected. If the numbers don't reconcile, the build refuses to ship.</p>
-        <p class="sig">fit telemetry → parser → aggregation → validation → site</p>
+        <p>This page is deliberately plain: one HTML file, no framework, no trackers, no build step. The more serious projects live on the portfolio site with source, screenshots, and finished repos.</p>
+        <p class="sig"><a href="https://basarorsel.com">projects → basarorsel.com</a></p>
       </div>
     </div>
   </div>
@@ -247,12 +193,12 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-family:ui-monospace,
 <section id="hobbies">
   <div class="wrap">
     <span class="label">05 — Hobbies</span>
-    <h2>The rest of the bandwidth.</h2>
-    <div class="axioms">
-      <div class="ax"><div class="n">MACHINES</div><h3>Motorsport &amp; wrenching</h3><p>Formula 1, endurance racing, the Isle of Man TT — plus the hands-on side: fixing and modding cars. Aviation for the same reason: systems at their limits.</p></div>
-      <div class="ax"><div class="n">TERRAIN</div><h3>Wild disciplines</h3><p>Orienteering, mountaineering and open-water swimming — sports where the environment is the opponent and navigation is part of the fitness.</p></div>
-      <div class="ax"><div class="n">MIND</div><h3>Strategy &amp; understanding</h3><p>Chess and strategy games. Reading across psychology, human relations, politics and history — how people and systems actually behave.</p></div>
-      <div class="ax"><div class="n">TABLE</div><h3>Cooking &amp; eating</h3><p>Fuel is input, but the table is culture. Cooking properly, eating well — an athlete's appetite with a cook's standards.</p></div>
+    <h2>What I keep returning to.</h2>
+    <div class="cards">
+      <div class="card"><div class="n">Machines</div><h3>Racing, cars, aviation</h3><p>Formula 1, endurance racing, the Isle of Man TT, fixing and modding cars, and aircraft as systems pushed to consequence.</p></div>
+      <div class="card"><div class="n">Terrain</div><h3>Mountains and water</h3><p>Mountaineering and open-water swimming: places where comfort is a bad advisor and route choice matters.</p></div>
+      <div class="card"><div class="n">Mind</div><h3>Strategy and people</h3><p>Chess, strategy games, psychology, politics and history — not as trivia, but as attempts to model behavior.</p></div>
+      <div class="card"><div class="n">Table</div><h3>Cooking</h3><p>Food as fuel, culture and craft. I care about eating well without pretending the kitchen is separate from training.</p></div>
     </div>
   </div>
 </section>
@@ -260,17 +206,15 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-family:ui-monospace,
 <section id="work">
   <div class="wrap">
     <span class="label">06 — Work</span>
-    <h2>I build and operate WooCommerce stores.</h2>
+    <h2>Work is elsewhere on purpose.</h2>
     <div class="cols">
       <div>
-        <p>I run <b>Orsel Studio</b> — a WooCommerce operator for small businesses. Performance audits, store builds, and ongoing operations: the store is a system, and I keep it fast, secure, and selling.</p>
-        <p>Back-end development and applied data work since before university — full-stack PHP/SQL, RFID security systems, market analytics, SEO and automation.</p>
-        <p class="sig">python · sql · php · rust · go · bash · html/css/js</p>
+        <p>My commercial work lives under Orsel Studio: WooCommerce operations, AI/search-engine optimization, full websites, performance audits, store builds and ongoing technical upkeep for small businesses.</p>
+        <p>This page is not the sales page. It is the person behind the work.</p>
       </div>
       <div>
-        <p>Systems side: Docker, software automation, data and system design, LLM prompt engineering.</p>
-        <p>The business lives at <a href="https://orselstudio.tech" style="text-decoration:underline">orselstudio.tech</a>; the portfolio at <a href="https://basarorsel.com" style="text-decoration:underline">basarorsel.com</a>.</p>
-        <p class="sig">woocommerce → audit · build · operate</p>
+        <p>If you want services, go to <a href="https://orselstudio.tech">orselstudio.tech</a>. If you want proof of projects, sports logs, finished repos and field evidence, go to <a href="https://basarorsel.com">basarorsel.com</a>.</p>
+        <p class="sig">identity here · work there · proof on portfolio</p>
       </div>
     </div>
   </div>
@@ -279,10 +223,10 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-family:ui-monospace,
 <section id="contact">
   <div class="wrap">
     <span class="label">07 — Contact</span>
-    <h2>Signal, not noise.</h2>
-    <p class="lead">For collaboration, sponsorship, or a hard problem worth solving:</p>
-    <div class="goal" style="margin-top:30px"><span class="g mono" style="font-size:clamp(16px,2.6vw,22px)"><a href="mailto:contact@basarorsel.com" style="text-decoration:none">contact@basarorsel.com</a></span><span class="st">email — fastest route</span></div>
-    <div class="goal"><span class="g mono" style="font-size:clamp(16px,2.6vw,22px)"><a href="https://www.linkedin.com/in/basar-orsel" style="text-decoration:none">linkedin.com/in/basar-orsel</a></span><span class="st">professional record</span></div>
+    <h2>Write if there is a real reason.</h2>
+    <p class="lead">I prefer direct messages with context: what you want, why it matters, and what a useful reply would contain.</p>
+    <div class="goal" style="margin-top:30px"><span class="g mono" style="font-size:clamp(16px,2.6vw,22px)"><a href="mailto:contact@basarorsel.com">contact@basarorsel.com</a></span><span class="st">personal / portfolio</span></div>
+    <div class="goal"><span class="g mono" style="font-size:clamp(16px,2.6vw,22px)"><a href="mailto:contact@orselstudio.tech">contact@orselstudio.tech</a></span><span class="st">business</span></div>
     <div class="goal"><span class="g mono" style="font-size:clamp(16px,2.6vw,22px)">İzmir, Türkiye</span><span class="st">38°N 27°E</span></div>
   </div>
 </section>
@@ -309,7 +253,7 @@ btn.onclick = () => { mode = modes[(modes.indexOf(mode)+1)%3]; localStorage.setI
 apply(); setInterval(apply, 60000);
 
 /* ---------- page router: intro first, everything else via the menu ---------- */
-const SECTIONS = ['principles','sports','academic','code','hobbies','work','contact'];
+const SECTIONS = ['now','principles','sports','academic','code','hobbies','work','contact'];
 function route(){
   const h = location.hash.replace('#','');
   const valid = SECTIONS.includes(h);
