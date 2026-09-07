@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Başar Örsel</title>
-<meta name="description" content="Başar Örsel — a personal identity page: mathematics, sprint orienteering, systems, projects, and current direction.">
+<meta name="description" content="Başar Örsel — a personal identity page: mathematics, orienteering, systems, projects, and current direction.">
 <link rel="icon" type="image/svg+xml" href="/logo.svg">
 <style>
 /* ---------- base: white is the day, black is the night ---------- */
@@ -107,6 +107,18 @@ section.active{display:block}
   section{padding:110px 0 70px}
 }
 footer{border-top:1px solid var(--line);padding:44px 0;font-size:11.5px;color:var(--mut);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+/* Shared identity layout: keep identical on .com and .me. */
+header.hero{min-height:100vh;display:flex;align-items:flex-start;padding:140px 0 80px;text-align:center}
+header.hero>.wrap{width:100%}
+.signature-name{display:block;width:min(760px,100%);height:auto;margin:0 auto 18px;color:var(--fg);filter:none}
+:root[data-theme="dark"] .signature-name{filter:invert(1)}
+.hero .role,.hero .lead,.hero p,.hero .statstrip{margin-left:auto;margin-right:auto}
+.hero-actions{justify-content:center}
+section>.wrap{text-align:center}
+section .lead{margin-left:auto;margin-right:auto}
+.card{text-align:center}
+.nowgrid,.table-scroll,.methods{text-align:left}
+@media(max-width:600px){header.hero{padding:110px 0 56px}}
 </style>
 </head>
 <body>
@@ -137,7 +149,7 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-size:11.5px;color:va
 <header class="hero" id="home">
   <div class="wrap">
     <img class="signature-name" src="/signature.svg" alt="Başar Örsel">
-    <div class="role">mathematics student · sprint orienteer · builder of small systems</div>
+    <div class="role">mathematics student · orienteer · builder of small systems</div>
     <p class="lead" style="margin-top:28px">
       I am trying to become a harder person to fool: by proofs, by training logs, by maps, by code, and by keeping my systems honest enough that bad numbers cannot hide.
     </p>
@@ -156,7 +168,7 @@ footer{border-top:1px solid var(--line);padding:44px 0;font-size:11.5px;color:va
     <h2>Current state, not a biography.</h2>
     <div class="nowgrid">
       <div class="k">Studying</div><div class="v">B.Sc. Mathematics at İzmir Institute of Technology; interests: topology, knot theory, machine learning, LLMs.</div>
-      <div class="k">Training</div><div class="v">Rebuilding from a detrained state toward a 2027 E21E sprint-orienteering comeback. The gate is 3000 m under 10:00.</div>
+      <div class="k">Training</div><div class="v">Rebuilding from a detrained state toward a 2027 E21E orienteering comeback. The gate is 3000 m under 10:00.</div>
       <div class="k">Building</div><div class="v">A three-domain system: this identity page, a portfolio/data site, and Orsel Studio for WooCommerce, AI/search optimization, and full websites.</div>
       <div class="k">Tracking</div><div class="v">Training and work are instrumented where possible. I prefer numbers that can embarrass me over claims that flatter me.</div>
     </div>
