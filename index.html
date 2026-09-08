@@ -142,7 +142,7 @@ section .lead{margin-left:auto;margin-right:auto}
       <a href="#about">About</a>
       <a href="#directory">Directory</a>
       <a href="#contact">Contact</a>
-      <a href="https://basarorsel.com" style="color:var(--accent)">Portfolio ↗</a>
+      <a href="https://basarorsel.com" style="color:var(--accent)">Data ↗</a>
       <button id="themeBtn" title="Theme: auto follows the sun — white is the day, black is the night">AUTO</button>
     </div>
   </div>
@@ -155,6 +155,7 @@ section .lead{margin-left:auto;margin-right:auto}
     <p class="lead" style="margin-top:28px">
       I am trying to become a harder person to fool: by proofs, by training logs, by maps, by code, and by keeping my systems honest enough that bad numbers cannot hide.
     </p>
+    <div class="hero-actions mono" style="display:flex;margin-top:28px"><a href="https://basarorsel.com">See the receipts →</a></div>
     <div class="statstrip">
       <div class="s"><div class="v">İYTE</div><div class="k">B.Sc. mathematics</div></div>
       <div class="s"><div class="v">E21E</div><div class="k">orienteering target</div></div>
@@ -178,7 +179,7 @@ section .lead{margin-left:auto;margin-right:auto}
   </div>
 </section>
 
-<section id="about"><div class="wrap"><div class="about-tabs" role="tablist" aria-label="About"><a id="about-tab-principles" href="#principles" role="tab" aria-controls="principles" aria-selected="false" tabindex="-1">Principle</a><a id="about-tab-academic" href="#academic" role="tab" aria-controls="academic" aria-selected="false" tabindex="-1">Academic</a><a id="about-tab-hobbies" href="#hobbies" role="tab" aria-controls="hobbies" aria-selected="false" tabindex="-1">Hobbies</a></div></div><div id="principles" role="tabpanel" aria-labelledby="about-tab-principles" hidden>
+<section id="about"><div class="wrap"><div class="about-tabs" role="tablist" aria-label="About"><a id="about-tab-principles" href="#principles" role="tab" aria-controls="principles" aria-selected="false" tabindex="-1">Principle</a><a id="about-tab-academic" href="#academic" role="tab" aria-controls="academic" aria-selected="false" tabindex="-1">Academic</a><a id="about-tab-training" href="#training" role="tab" aria-controls="training" aria-selected="false" tabindex="-1">Training</a><a id="about-tab-hobbies" href="#hobbies" role="tab" aria-controls="hobbies" aria-selected="false" tabindex="-1">Hobbies</a></div></div><div id="principles" role="tabpanel" aria-labelledby="about-tab-principles" hidden>
   <div class="wrap">
     <span class="label">01 — Principle</span>
     <h2>Discipline is structural, not emotional.</h2>
@@ -212,6 +213,7 @@ section .lead{margin-left:auto;margin-right:auto}
   </div>
 </div>
 
+<div id="training" role="tabpanel" aria-labelledby="about-tab-training" hidden><div class="wrap"><span class="label">Training</span><h2>Orienteering, with a record.</h2><p class="lead">Rebuilding toward a 2027 E21E orienteering comeback. The 3000 m under 10:00 gate is a target, not a recorded result.</p><p style="margin:24px auto">Running, mountains, swimming, strength and mobility belong to the same training life. This is the person layer; the evidence layer holds recorded sessions, maps, coverage and bests.</p><p style="margin:auto"><a href="https://basarorsel.com/#data">See the receipts →</a></p></div></div>
 <div id="hobbies" role="tabpanel" aria-labelledby="about-tab-hobbies" hidden>
   <div class="wrap">
     <span class="label">03 — Hobbies</span>
@@ -231,7 +233,7 @@ section .lead{margin-left:auto;margin-right:auto}
   <div class="wrap">
     <span class="label">04 — Directory</span>
     <h2>Where to find the rest of me.</h2>
-    <p class="lead">Three sites, one person. Personal context here, training data and projects in the portfolio, client work at Orsel Studio.</p>
+    <p class="lead">Three sites, one person. The identity layer here, training data and projects in the evidence layer, client work at Orsel Studio.</p>
     <div class="cards cards-3">
       <a class="card" href="https://basarorsel.me" aria-current="page" style="display:block;text-decoration:none;border:1px solid var(--line)">
         <div class="n">Person</div>
@@ -290,7 +292,7 @@ apply(); setInterval(apply, 60000);
 
 /* ---------- page router: intro first, everything else via the menu ---------- */
 const SECTIONS = ['now','about','directory','contact'];
-const ABOUT = ['principles','academic','hobbies'];
+const ABOUT = ['principles','academic','training','hobbies'];
 function route(){
   const raw = location.hash.replace('#','');
   const h = ABOUT.includes(raw) ? 'about' : raw;
@@ -312,7 +314,7 @@ function route(){
 }
 document.querySelectorAll('.about-tabs [role=tab]').forEach((tab,i)=>{
   tab.addEventListener('keydown',e=>{
-    const n=e.key==='ArrowRight'?(i+1)%3:e.key==='ArrowLeft'?(i+2)%3:e.key==='Home'?0:e.key==='End'?2:null;
+    const n=e.key==='ArrowRight'?(i+1)%ABOUT.length:e.key==='ArrowLeft'?(i+ABOUT.length-1)%ABOUT.length:e.key==='Home'?0:e.key==='End'?ABOUT.length-1:null;
     if(n!==null){e.preventDefault();location.hash=ABOUT[n];document.getElementById('about-tab-'+ABOUT[n]).focus();}
   });
 });
