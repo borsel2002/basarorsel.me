@@ -3,10 +3,105 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Başar Örsel</title>
-<meta name="description" content="Başar Örsel — a personal identity page: mathematics, orienteering, systems, projects, and current direction.">
 <link rel="icon" type="image/svg+xml" href="/logo.svg">
+<title>Başar Örsel — Mathematics Student, Orienteer &amp; Developer</title>
+<meta name="description" content="Başar Örsel: former Turkish national orienteer, İYTE mathematics student and developer in İzmir, training in mountaineering, swimming, strength and mobility.">
+<link rel="canonical" href="https://basarorsel.me/">
+<meta name="robots" content="index, follow">
+<link rel="sitemap" type="application/xml" href="https://basarorsel.me/sitemap.xml">
+<meta property="og:title" content="Başar Örsel — Mathematics Student, Orienteer &amp; Developer">
+<meta property="og:description" content="Başar Örsel: former Turkish national orienteer, İYTE mathematics student and developer in İzmir, training in mountaineering, swimming, strength and mobility.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://basarorsel.me/">
+<meta property="og:image" content="https://basarorsel.me/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Başar Örsel signature on a white background">
+<meta property="og:site_name" content="Başar Örsel — Personal Identity">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Başar Örsel — Mathematics Student, Orienteer &amp; Developer">
+<meta name="twitter:description" content="Başar Örsel: former Turkish national orienteer, İYTE mathematics student and developer in İzmir, training in mountaineering, swimming, strength and mobility.">
+<meta name="twitter:image" content="https://basarorsel.me/social-card.png">
+<meta name="twitter:image:alt" content="Başar Örsel signature on a white background">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://basarorsel.me/#person",
+      "name": "Başar Örsel",
+      "alternateName": "Basar Orsel",
+      "url": "https://basarorsel.me/",
+      "image": "https://basarorsel.me/signature.svg",
+      "jobTitle": "Developer",
+      "description": "Mathematics student at İzmir Institute of Technology (İYTE), former national orienteer for Turkey, rebuilding toward E21E in 2027. Developer of basarorsel.com, basarorsel.me and Orsel Studio.",
+      "nationality": {
+        "@type": "Country",
+        "name": "Turkey"
+      },
+      "knowsAbout": [
+        "Orienteering",
+        "Mountaineering",
+        "Triathlon",
+        "Swimming",
+        "Running",
+        "Strength training",
+        "Mobility training",
+        "Mathematics",
+        "Software development"
+      ],
+      "sameAs": [
+        "https://github.com/borsel2002",
+        "https://basarorsel.com/",
+        "https://basarorsel.me/"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "İzmir",
+        "addressCountry": "TR"
+      },
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "İzmir Institute of Technology",
+        "alternateName": "İYTE"
+      },
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Mathematics student"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://basarorsel.me/#website",
+      "name": "Başar Örsel — Mathematics Student, Orienteer & Developer",
+      "url": "https://basarorsel.me/",
+      "description": "Başar Örsel: former Turkish national orienteer, İYTE mathematics student and developer in İzmir, training in mountaineering, swimming, strength and mobility.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://basarorsel.me/#person"
+      }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://basarorsel.me/#profile",
+      "url": "https://basarorsel.me/",
+      "name": "Başar Örsel — Mathematics Student, Orienteer & Developer",
+      "description": "Başar Örsel: former Turkish national orienteer, İYTE mathematics student and developer in İzmir, training in mountaineering, swimming, strength and mobility.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://basarorsel.me/#website"
+      },
+      "mainEntity": {
+        "@id": "https://basarorsel.me/#person"
+      }
+    }
+  ]
+}
+</script>
 <style>
+.sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
 /* ---------- base: white is the day, black is the night ---------- */
 :root{
   --bg:#fff;--fg:#0b0b0b;--mut:#656565;--line:#e8e8e8;--card:#fafafa;
@@ -127,11 +222,11 @@ section .lead{margin-left:auto;margin-right:auto}
 </head>
 <body>
 
-<nav>
+<nav aria-label="Primary navigation">
   <div class="wrap">
     <a class="brand" href="#" aria-label="Başar Örsel home">
-      <img class="brand-logo brand-logo-light" src="/brand-logo-light.svg" alt="" aria-hidden="true">
-      <img class="brand-logo brand-logo-dark" src="/brand-logo-dark.svg" alt="" aria-hidden="true">
+      <img class="brand-logo brand-logo-light" src="/brand-logo-light.svg" alt="Başar Örsel monogram logo">
+      <img class="brand-logo brand-logo-dark" src="/brand-logo-dark.svg" alt="Başar Örsel monogram logo">
       <span>BAŞAR&nbsp;ÖRSEL</span>
     </a>
     <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">
@@ -143,14 +238,15 @@ section .lead{margin-left:auto;margin-right:auto}
       <a href="#directory">Directory</a>
       <a href="#contact">Contact</a>
       <a href="https://basarorsel.com" style="color:var(--accent)">Data ↗</a>
-      <button id="themeBtn" title="Theme: auto follows the sun — white is the day, black is the night">AUTO</button>
+      <button id="themeBtn" aria-label="Change color theme" title="Theme: auto follows the sun — white is the day, black is the night">AUTO</button>
     </div>
   </div>
 </nav>
 
 <header class="hero" id="home">
   <div class="wrap">
-    <img class="signature-name" src="/signature.svg" alt="Başar Örsel">
+    <h1 class="sr-only">Başar Örsel — mathematics student, orienteer and developer</h1>
+    <img class="signature-name" src="/signature.svg" alt="Başar Örsel handwritten signature">
     <div class="role">mathematics student · orienteer · builder of small systems</div>
     <p class="lead" style="margin-top:28px">
       I am trying to become a harder person to fool: by proofs, by training logs, by maps, by code, and by keeping my systems honest enough that bad numbers cannot hide.
@@ -169,6 +265,7 @@ section .lead{margin-left:auto;margin-right:auto}
   <div class="wrap">
     <span class="label">00 — Now</span>
     <h2>Current state, not a biography.</h2>
+    <p>Başar Örsel (Basar Orsel) is a mathematics student at İzmir Institute of Technology (İYTE) in İzmir, Turkey, a former national orienteer for Turkey, and the developer of basarorsel.com, basarorsel.me and Orsel Studio. He is rebuilding toward E21E in 2027, with mountaineering, swimming, running, strength and mobility training.</p>
     <div class="nowgrid">
       <div class="k">Studying</div><div class="v">B.Sc. Mathematics at İzmir Institute of Technology; interests: topology, knot theory, machine learning, LLMs.</div>
       <div class="k">Training</div><div class="v">Rebuilding from a detrained state toward a 2027 E21E orienteering comeback. The gate is 3000 m under 10:00.</div>
@@ -271,7 +368,7 @@ section .lead{margin-left:auto;margin-right:auto}
 <footer>
   <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:0 24px">
     <span>BAŞAR ÖRSEL — hand-coded, single HTML file. No frameworks, no trackers, no dependencies.</span>
-    <a href="https://basarorsel.com">the receipts → basarorsel.com</a>
+    <a href="https://basarorsel.com">Başar Örsel — training data and projects</a>
     <span>white is the day · black is the night</span>
   </div>
 </footer>
